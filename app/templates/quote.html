@@ -1,0 +1,25 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+Buy
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='styles.css')}}">
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+  <main class="container p-5">
+    <div class="form-group">
+      <p style="font-weight: 600;">{{ response }}</p>
+    </div>
+  </main>
+    
+  
+  
+{% endblock %}
+
+
+

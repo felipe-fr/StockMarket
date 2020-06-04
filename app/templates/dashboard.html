@@ -1,0 +1,46 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+    {% if get_flashed_messages() %}
+      <header>
+          <div class="alert alert-success border text-center" role="alert">
+              {{ get_flashed_messages() | join(" ") }}
+          </div>
+      </header>
+    {% endif %}
+    <div class="container-fluid">
+      <div class="row">  
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome, {{name}}</h1>
+          <h2 class="sub-header">Wallet</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Shares</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in wallet %}
+                        <tr>
+                            <td>{{ item["Symbol"] }}</td>
+                            <td>{{ item["Shares"] }}</td>
+                            <td>{{ item["Price"] }}</td>
+                            <td>{{ item["Total"] }}</td>
+                        </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

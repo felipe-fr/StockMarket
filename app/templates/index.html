@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+
+
+
+{% block content %}
+  {{ super() }} 
+  {% if get_flashed_messages() %}
+    <header>
+        <div class="alert alert-success border text-center" role="alert">
+            {{ get_flashed_messages() | join(" ") }}
+        </div>
+    </header>
+  {% endif %}
+    <div class="container">
+      <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+    </div><!-- /.container -->
+{% endblock %}
