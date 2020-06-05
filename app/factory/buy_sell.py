@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import Flask, redirect, url_for, flash
 import datetime
 
 from app.factory.stock_api import get_price
@@ -8,7 +8,7 @@ from app.models import User, TransactionHistory
 
 def buy_shares(form, name):
     price = get_price(form.symbol.data)
-    if price != False:
+    if not price:
         price = float(price)
         shares = int(form.shares.data)
         cost = price*shares
@@ -48,7 +48,7 @@ def raw_wallet(name):
                     history.remove(item)
 
                 check_history = True
-        if check_history == False:
+        if not check_history:
             history.append(item_history)
     return history
 
