@@ -7,7 +7,7 @@
       HTML,CSS, JS, BOOTSTRAP 
   ### BACK-END:
       FLASK
-  ### What I learn in this project:
+  ### What I learned in this project:
        - ORMs to treat my database
        - working with forms to help in the front end in a mvc project
        - factory pattern to design the project architecture
